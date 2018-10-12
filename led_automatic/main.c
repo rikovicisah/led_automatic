@@ -2,7 +2,7 @@
  * LDR_automatic_LED.c
  *
  * Created: 2.10.2018 23:05:03
- * Author : Isah Rikovic
+ * Author : Irhad
  */ 
 
 #include <avr/io.h>
@@ -82,8 +82,8 @@ void ADC_init(){
 
 ISR(ADC_vect) {
 	PORTB = ADCH;	// assign contents of ADC high register to Port D pins
-	int b = (int)ADCH;
-	if(b > 220)	{ //100
+	//int b = (int)ADCH;
+	if((int)ADCH > 220)	{ //100
 		PORTD |= 0x1;
 	}else{
 		PORTD &= ~(0x1);
